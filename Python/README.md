@@ -1,4 +1,4 @@
-# 9chap_algs Python
+# 9chap_algs Basic
 * Also referred to https://github.com/Dacheng-Zhao/LintCode-Ladder
 
 ## 1 Hack the Algorithm Interview
