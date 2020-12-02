@@ -5,7 +5,7 @@ import java.util.*;
 import org.junit.Test;
 
 // 147
-public class NarcissisticNumber {
+public class NarcissisticNumber_147 {
 
     @Test
     public void test() {
@@ -19,7 +19,7 @@ public class NarcissisticNumber {
         // System.out.println( isNarcissNum(371));
 
         // build(1);
-        dfsComb(3);
+        dfsDriver(3);
     }
 
     /**
@@ -62,24 +62,24 @@ public class NarcissisticNumber {
         return (int) Math.pow((double) base, (double) power);
     }
 
-    public static void build(int n) {
-        boolean first = true;
-        int comb = 0;
-        for (int i = 0; i < n; i++) {
-            int j = 0;
-            if (first) {
-                j = 1;
-                first = !first;
-            }
-            for (; j < 10; j++) {
-                comb = j + comb * 10;
-            }
-            if (i == n - 1) {
-                System.out.println(comb);
-                comb = 0;
-            }
-        }
-    }
+    // public static void build(int n) {
+    //     boolean first = true;
+    //     int comb = 0;
+    //     for (int i = 0; i < n; i++) {
+    //         int j = 0;
+    //         if (first) {
+    //             j = 1;
+    //             first = !first;
+    //         }
+    //         for (; j < 10; j++) {
+    //             comb = j + comb * 10;
+    //         }
+    //         if (i == n - 1) {
+    //             System.out.println(comb);
+    //             comb = 0;
+    //         }
+    //     }
+    // }
 
     /**
      * Inspired by https://www.geeksforgeeks.org/count-of-n-digit-numbers-whose-sum-of-digits-equals-to-given-sum/
