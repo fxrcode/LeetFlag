@@ -1,5 +1,3 @@
-package leet;
-
 /*
  * @lc app=leetcode id=5 lang=java
  *

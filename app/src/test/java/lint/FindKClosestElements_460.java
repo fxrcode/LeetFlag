@@ -41,8 +41,8 @@ public class FindKClosestElements_460 {
      */
     public int[] kClosestNumbers(int[] A, int target, int k) {
         // write your code here
-        int left = findLowerClosest(A, target);
-        int right = left + 1;
+        int right = searchInsert(A, target);
+        int left = right - 1;
         System.out.println( left + " , " + right);
         int[] result = new int[k];
         for (int i = 0; i < k; ++i) {
@@ -58,28 +58,28 @@ public class FindKClosestElements_460 {
     }
 
     /**
-     * Find last < target, so last + 1 >= target (if not out of index)
+     * Find first position >= target
      * @param A
      * @param target
      * @return
      */
-    private int findLowerClosest(int[] A, int target) {
+    private int searchInsert(int[] A, int target) {
         int start = 0, end = A.length - 1;
         while (start + 1 < end) {
-            int mid = (start + end) >> 1;
+            int mid = (start + end) /2;
             if (A[mid] < target) {
                 start = mid;
             } else {
                 end = mid;
             }
         }
-        if (A[end] < target) {
-            return end;
-        }
-        if (A[start] < target) {
+        if (A[start] >= target) {
             return start;
         }
-        return -1;
+        if (A[end] >= target) {
+            return end;
+        }
+        return end+1;
     }
 
     private boolean leftCloser(int[] A, int target, int l, int r) {

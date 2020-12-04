@@ -41,6 +41,17 @@
     * 这题体现出子函数的优越性: 容易 debug
     * 把 OOXX binary search 和 findLowerClosest 分出来写。
     * 而且clean code自动就 cover 了边界情况了。果然if/else多就说明思路不清楚。
+* [x] Leet 35. Search Insert Position
+    * find first position >= target.
+    * 注意：对于target > array的max，则是end+1。
+    * 其实Java自带：`Collections.binarySearch(arr, target)`.
+* [] Leet 658 Find K Closest Elements
+    * 和lint的区别在于返回的值。
+        * Lint的返回是按照abs dist的顺序。
+        * Leet则是返回 sorted closest Elements。
+    * 还是双指针，也是要确定边界。不过这里怎么处理比较clean?
+        * 其实可以跟Lintcode一样写法。
+        * 不过coding基础要掌握好：fori k次，每次 `l--, r++`, 结果应该取 `[l+1,r-1]! 因为退出的时候i = k!
 
 * [x] 459 Closest Number in Sorted Array
     * 第二境界 OOXX，找first或last
