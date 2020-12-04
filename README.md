@@ -45,20 +45,21 @@
     * find first position >= target.
     * 注意：对于target > array的max，则是end+1。
     * 其实Java自带：`Collections.binarySearch(arr, target)`.
-* [] Leet 658 Find K Closest Elements
+* [x] Leet 658 Find K Closest Elements
     * 和lint的区别在于返回的值。
         * Lint的返回是按照abs dist的顺序。
         * Leet则是返回 sorted closest Elements。
     * 还是双指针，也是要确定边界。不过这里怎么处理比较clean?
         * 其实可以跟Lintcode一样写法。
-        * 不过coding基础要掌握好：fori k次，每次 `l--, r++`, 结果应该取 `[l+1,r-1]! 因为退出的时候i = k!
+        * 不过coding基础要掌握好：fori k次，每次 `l--, r++`, 结果应该取 `[l+1,r-1]` ! 因为退出的时候i = k!
 
 * [x] 459 Closest Number in Sorted Array
     * 第二境界 OOXX，找first或last
 
 * [] 447 Search in a Big Sorted Array
 * [] 428 Pow(x, n)
-* [] 159 Find Minimum in Rotated Sorted Array
+* [x] 159 Find Minimum in Rotated Sorted Array
+    * 只要画图分析2种情况的RSA，就能发现：只需要比较 `A[mid]`和 `A[end]`.
 * [] 140 Fast Power
 * [] 75 Find Peak Element
 * [] 74 First Bad Version
