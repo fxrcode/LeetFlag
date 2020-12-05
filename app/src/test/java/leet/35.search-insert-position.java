@@ -23,6 +23,7 @@ class Solution {
         if (nums[end] >= target) {
             return end;
         }
+        // https://www.jiuzhang.com/problem/search-insert-position/
         return end+1;
     }
 }

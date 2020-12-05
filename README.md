@@ -43,7 +43,7 @@
     * 而且clean code自动就 cover 了边界情况了。果然if/else多就说明思路不清楚。
 * [x] Leet 35. Search Insert Position
     * find first position >= target.
-    * 注意：对于target > array的max，则是end+1。
+    * 注意：对于target > array的max，则是 `end+1`
     * 其实Java自带：`Collections.binarySearch(arr, target)`.
 * [x] Leet 658 Find K Closest Elements
     * 和lint的区别在于返回的值。
