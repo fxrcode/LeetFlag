@@ -12,20 +12,20 @@ class Solution {
         }
         int i = 0, j = s.length()-1;
         char[] cs = s.toCharArray();
+        // partition style: outer loop + one while per reverse pointer. 
         while (i < j) {
-            if (!Character.isLetterOrDigit(cs[i])) {
+            while (i < j && !Character.isLetterOrDigit(cs[i])) {
                 i++;
             }
-            else if (!Character.isLetterOrDigit(cs[j])) {
+            while (i < j && !Character.isLetterOrDigit(cs[j])) {
                 j--;
             }
-            else {
-                if (Character.toLowerCase(cs[i]) != Character.toLowerCase(cs[j])) {
-                    return false;
-                }
-                i++;
-                j--;
+            if (Character.toLowerCase(cs[i]) != Character.toLowerCase(cs[j])) {
+                return false;
             }
+            i++;
+            j--;
+
         }
         return true;
     }
