@@ -126,7 +126,6 @@
 * [] 597 Subtree with Maximum Average
 * [] 175 Invert Binary Tree
 * [] 95 Validate Binary Search Tree
-* [] 596 Minimum Subtree
 * [] 88 Lowest Common Ancestor of a Binary Tree
 * [] 86 Binary Search Tree Iterator
 * [] 448 Inorder Successor in BST
@@ -135,7 +134,11 @@
 * [] 85 Insert Node in a Binary Search Tree
 * [] 87 Remove Node in Binary Search Tree
 * [] 900 Closest Binary Search Tree Value
-* [] 596 Minimum Subtree
+* [x] 596 Minimum Subtree
+    * 经典的Tree-based DFS之分治法。看到Binary Tree基本上都是DFS。而分治法基本只会考Tree DFS或Merge Sort。
+    * 相对于Python可以返回multi value。Java要写ResultType。
+    * 相对于DFS 遍历法的global var，会导致class成为stateful，因而不好改multi-thread。所以最好写分治法。
+    * 分治法可以把中间结果作为arg传入func，或作为return。注意Java is always call-by-value. 所以 func 里 List = [xxx] 只对func 内可见; 而 func里 List.add(xxx) 则内外皆可见。
 * [] 480 Binary Tree Paths
 * [] 453 Flatten Binary Tree to Linked List
 * [] 93 Balanced Binary Tree
