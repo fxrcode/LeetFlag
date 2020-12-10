@@ -127,6 +127,10 @@
 * [] 175 Invert Binary Tree
 * [] 95 Validate Binary Search Tree
 * [] 88 Lowest Common Ancestor of a Binary Tree
+    * 名字有简写的题目都是经典算法，是必许瞬间写出来的。
+    * 这题要认真考虑dfs的返回是什么，从而 dfs(父节点) 里面可以利用 dfs(son) 的state。
+        * dfs返回的并不只是 lca，还会返回 either p or q in tree rooted by 父节点; 也会返回 neither p nor q in tree rooted by 父节点。
+        * 这样对于父节点。才可以把3种情况都cover，并且有可以用的值。
 * [] 86 Binary Search Tree Iterator
 * [] 448 Inorder Successor in BST
 * [] 67 Binary Tree Inorder Traversal
