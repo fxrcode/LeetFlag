@@ -144,7 +144,9 @@
     * 相对于DFS 遍历法的global var，会导致class成为stateful，因而不好改multi-thread。所以最好写分治法。
     * 分治法可以把中间结果作为arg传入func，或作为return。注意Java is always call-by-value. 所以 func 里 List = [xxx] 只对func 内可见; 而 func里 List.add(xxx) 则内外皆可见。
 * [] 480 Binary Tree Paths
-* [] 453 Flatten Binary Tree to Linked List
+* [x] 453 Flatten Binary Tree to Linked List
+    * DFS 同样有 遍历法 vs 分治法。遍历法需要更多练习，因为以前没有写过。
+    * 注意dynamic data struct的update。在restructure的时候，要在赋值新link前，用这个link。
 * [] 93 Balanced Binary Tree
 * [] 902 Kth Smallest Element in a BST
 * [] 578 Lowest Common Ancestor III
