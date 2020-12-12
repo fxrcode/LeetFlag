@@ -147,12 +147,18 @@
 * [x] 453 Flatten Binary Tree to Linked List
     * DFS 同样有 遍历法 vs 分治法。遍历法需要更多练习，因为以前没有写过。
     * 注意dynamic data struct的update。在restructure的时候，要在赋值新link前，用这个link。
+    * 对于 遍历法，是按照pre-order的顺序 处理root -> restruct lastnode，并dfs(root.left) & dfs(root.right)
+    * 对于 分治法，定义好dfs的返回值后，无脑call dfs(root.left) & dfs(root.right). 然后做restruct。注意这里做connect和return lastnode的处理。做完connect后，先判断有没有right_last, 再判断有没有left_last. 这样写可以少一次比较。
 * [] 93 Balanced Binary Tree
 * [] 902 Kth Smallest Element in a BST
 * [] 578 Lowest Common Ancestor III
 * [] 95 Validate Binary Search Tree
 * [] 901  Closest Binary Search Tree Value II
-* [] 86 Binary Search Tree Iterator
+* [x] 86 Binary Search Tree Iterator
+    * BST 的题目必然考 Iterator，即non-recursion in-order traversal。要理解了才能记下来，跟其他算法、数据结构一样。
+    * 记住stack的意义：保存一路走到当前节点的所有节点，top一定指向next。
+    * 不仅适用于BST，任意Binary Tree都可以。
+    * 像B站的北大大雪菜所说，他们训练的方式就是每天重复默写知识架构的DSA；做了的题目都会擦掉重写，重要的事情说3遍。
 
 ## 6 Combination-based DFS
 * [] 90 k Sum II
