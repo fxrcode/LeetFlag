@@ -103,7 +103,7 @@
         * JeffE之所以 k-r，是因为它passin的是subarray。所以index变化了。
     * 还有就是partition的pivot要换成random，否则LeetCode只有20%的成绩。改成random就变成97%了。
     * 可见还是要多写多总结，包括各种小的coding知识点: `index, off-by-1, etc.`
-    * created my 1st leetcode post: https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/1023974/Nico-Lomuto-Partition-as-in-JeffE's-Algorithms.wtf-book
+    * created my 1st leetcode post: https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/1023974/Linear-time-selection-with-Nico-Lomuto-Partition-as-in-JeffE's-Algorithms.wtf-book
 
 
 ## 4 BFS & Topological Sort
@@ -144,7 +144,8 @@
 * [] 11 Search Range in Binary Search Tree
 * [] 85 Insert Node in a Binary Search Tree
 * [] 87 Remove Node in Binary Search Tree
-* [] 900 Closest Binary Search Tree Value
+* [x] 900 Closest Binary Search Tree Value
+    * lower/upper bound, traverse the BST according to root.val vs target.
 * [x] 596 Minimum Subtree
     * 经典的Tree-based DFS之分治法。看到Binary Tree基本上都是DFS。而分治法基本只会考Tree DFS或Merge Sort。
     * 相对于Python可以返回multi value。Java要写ResultType。
