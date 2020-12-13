@@ -1,19 +1,24 @@
 package basic;
 
+import java.util.Random;
+
 import org.junit.Test;
 
 public class QuickSelect {
+    private Random rand = new Random();
     @Test
     public void test() {
-        int[] A = { 3, 4, 1, 2, 5 };
-        int k = 3;
-        System.out.println(kthSmallest(k, A));
+        int[] A = { 3, 2, 1, 5, 6, 4 };
+        for (int k = 1; k <= A.length; k++) {
+            System.out.println(kthSmallest(k, A));
+        }
+        // System.out.println(kthSmallest(1, A));
     }
 
     @Test
     public void testLomuto() {
         int[] A = {3, 4, 1, 2, 5};
-        System.out.println( partition(A, 0));
+        System.out.println( partition(A, 0, A.length-1, 2));
     }
 
     /**
@@ -37,19 +42,21 @@ public class QuickSelect {
      * @return
      */
     public int quickSelectJeffE(int[] nums, int start, int end, int k) {
+        // System.out.println( start + "->" + end);
         // edge case: return when nums size = 1
         if (start == end) {
             return nums[start];
         }
 
         // always pick the last elem as pivot
-        int r = partition(nums, nums.length-1);
-
+        int p = rand.nextInt(end-start+1) + start;
+        int r = partition(nums, start, end, p);
+        // System.out.println( "\t" + r);
         // the r has partitioned nums into 3 parts
         if (k < r) {
-            return quickSelectJeffE(nums, 0, r-1, k);
+            return quickSelectJeffE(nums, start, r-1, k);
         } else if (k > r) {
-            return quickSelectJeffE(nums, r+1, nums.length-1, k-r);
+            return quickSelectJeffE(nums, r+1, end, k);
         } else {
             return nums[r];
         }
@@ -61,21 +68,17 @@ public class QuickSelect {
      * @param p // default to n-1, so always pick the last elem as Pivot
      * @return  // the "indexOf" nums[p]
      */
-    private int partition(int[] nums, int p) {
+    private int partition(int[] nums, int start, int end, int p) {
         int pivot = nums[p];
-        swap(nums, p, nums.length-1);   // put pivot to the end of array
-        int l = 0-1;    // index to elem < pivot, so this pointer to -1.
-        for (int i = 0; i < nums.length-1; i++) {   // no need to process last elem
+        swap(nums, p, end);
+        int l = start-1;    // index to elem < pivot, so this pointer to -1.
+        for (int i = start; i < end; i++) {   // no need to process last elem
             if (nums[i] < pivot) {
                 l++;    // one more less than
                 swap(nums, l, i);   // swap
             }
-            // loop invariant:
-            // [0...l-1] < pivot
-            // [l...i] >= pivot
-            // [i...len-2] un-decided
         }
-        swap(nums, l+1, nums.length-1);
+        swap(nums, l+1, end);
         return l+1;
     }
 

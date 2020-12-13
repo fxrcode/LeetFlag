@@ -97,7 +97,14 @@
 * [] 143 Sort Colors II
 * [] 57 3Sum
 * [] 31 Partition Array
-* [] 5 Kth Largest Element
+* [x] 5 Kth Largest Element
+    * 之前在Basic里写过partition和quickselect，以为自己懂了，其实并不是...
+    * 这次因为BST Kth largest element所以来做这题才发现一直是stack overflow。print来发现因为partition return的一直都是原本nums的index。所以并不需要像JeffE书里那样在 k>r 的时候 k-r。
+        * JeffE之所以 k-r，是因为它passin的是subarray。所以index变化了。
+    * 还有就是partition的pivot要换成random，否则LeetCode只有20%的成绩。改成random就变成97%了。
+    * 可见还是要多写多总结，包括各种小的coding知识点: `index, off-by-1, etc.`
+    * created my 1st leetcode post: https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/1023974/Nico-Lomuto-Partition-as-in-JeffE's-Algorithms.wtf-book
+
 
 ## 4 BFS & Topological Sort
 * [] 69 Binary Tree Level Order Traversal
