@@ -180,7 +180,8 @@
 * [] 152 Combinations
 * [] 135 Combination Sum
 * [] 18 Subsets II
-* [] 17 Subsets
+* [x] 17 Subsets
+    * 预习入门题，有4种做法，我做了前2种：通用的DFS；组合类DFS专用DFS(一层一层的选择当前element是否加入结果中)
 * [] 780 Remove Invalid Parentheses
 * [] 582 Word Break II
 
