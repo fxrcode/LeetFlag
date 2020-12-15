@@ -170,7 +170,13 @@
 
 ## 6 Combination-based DFS
 * [] 90 k Sum II
-* [] 192 Wildcard Matching
+* [x] 192 Wildcard Matching
+    * 下半节课开始讲记忆化搜索，可以帮助从DFS -> DP.
+    * 注意DFS种，如果pattern的char是*，match 1 or more的话，并不需要for t <- i+1...s.length-1 : res |= dfs(s, t, p, j).
+        * 而是指需要一个dfs。因为递归是在循环层数不确定时的一个更优雅的实现多重循环的方式。
+        * 这个好好体会。
+    * 相比较Python，只要一个 memo = { (i,j) }. Java 则需要2个 2D boolean array。一个是memo， 一个是visited。
+        * 注意由于 i,j 最大会是length。所以在 dfs 一进入的时候，先判断edge case。然后才从memo返回值，如果visited的话。
 * [] 154 Regular Expression Matching
 * [] 582 Word Break II
 * [] 680 Split String
