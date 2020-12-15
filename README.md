@@ -172,13 +172,18 @@
 * [] 90 k Sum II
 * [x] 192 Wildcard Matching
     * 下半节课开始讲记忆化搜索，可以帮助从DFS -> DP.
-    * 注意DFS种，如果pattern的char是*，match 1 or more的话，并不需要for t <- i+1...s.length-1 : res |= dfs(s, t, p, j).
-        * 而是指需要一个dfs。因为递归是在循环层数不确定时的一个更优雅的实现多重循环的方式。
+    * 注意DFS中，如果pattern的char是*，match 1 or more的话，并不需要for t <- i+1...s.length-1 : res |= dfs(s, t, p, j).
+        * 而只需要一个dfs。因为递归是在循环层数不确定时的一个更优雅的实现多重循环的方式。
         * 这个好好体会。
     * 相比较Python，只要一个 memo = { (i,j) }. Java 则需要2个 2D boolean array。一个是memo， 一个是visited。
         * 注意由于 i,j 最大会是length。所以在 dfs 一进入的时候，先判断edge case。然后才从memo返回值，如果visited的话。
+    * 如果要从DFS->memoization search. 需要先是 divide & conquer的DFS，即有返回值的DFS。
+        * 然后memoization search即是把dfs的return记忆起来即可。例如用map，或matrix存储。
+        * 然后可以在dfs之前先看看map、matrix存不存在，若存在，直接返回即可，这就将时间复杂度瞬间变成DP的 O( matrix size )了。
+    * 如果是纯DP的话，这是“匹配型DP”
 * [] 154 Regular Expression Matching
 * [] 582 Word Break II
+    * 如果是纯DP做，can_cut(), 是“单序列型DP”.
 * [] 680 Split String
 * [] 570 Find the Missing Number II
 * [] 136 Palindrome Partitioning
@@ -203,7 +208,11 @@
 * [] 10 String Permutation II
 * [] 34 N-Queens II
 * [] 33 N-Queens
-* [] 16 Permutations II
+* [x] 16 Permutations II
+    * Given "aabb", return ["aabb", "abab", "baba", "bbaa", "abba", "baab"].
+    * 经典的permutation DFS。需要用visited，以及去重（aka 选代表）。
+        * 不会选出 `a1a3`. 因为sorted之后的nums，然后for loop。那么选代表的三个条件会保证。选择2个a的时候，必然是a1a2。只有选3个a的时候，才会a1a2a3.
+        * 这里要学习这个小的选代表snippet。关键在于思想。这样coding skill上去了，即逻辑清晰了，其他算法题也就通了。面试的DSA加起来就几十个。但逻辑能力是融会贯通的。
 * [] 15 Permutations
 * [] 829 Word Pattern II
 * [] 132 Word Search II
