@@ -197,7 +197,11 @@
 * [] 582 Word Break II
 
 ## 7 Permutation-based & Graph-based DFS
-* [] 33 N-Queens
+* [x] 33 N-Queens
+    * 果然如果没按照 声明 & 返回， add & remove. 就很容易漏掉。面试的时候不是bug-free就很容易挂了。
+    * 先用了O(N)的isValid。
+    * 后来改用了permutation DFS的模板，加了visited hashmap。注意map加速干什么？
+        * 这里valid是根据col, sum, diff. 所以map就存这3个对应的已经visited的states。所以value是一个hashset。
 * [] 52 Next Permutation
 * [] 190 Next Permutation II
 * [] 197 Permutation Index
