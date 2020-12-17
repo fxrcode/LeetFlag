@@ -218,7 +218,10 @@
         * 不会选出 `a1a3`. 因为sorted之后的nums，然后for loop。那么选代表的三个条件会保证。选择2个a的时候，必然是a1a2。只有选3个a的时候，才会a1a2a3.
         * 这里要学习这个小的选代表snippet。关键在于思想。这样coding skill上去了，即逻辑清晰了，其他算法题也就通了。面试的DSA加起来就几十个。但逻辑能力是融会贯通的。
 * [] 15 Permutations
-* [] 829 Word Pattern II
+* [x] 829 Word Pattern II
+    * 因为要求说bijection, 即一个pattern的char，一一对应一个substring。
+    * 建立1个map，和一个used set。
+        * 当map中有key=pattern_char，则check pattern对应的
 * [] 132 Word Search II
 * [] 121 Word Ladder II
 
