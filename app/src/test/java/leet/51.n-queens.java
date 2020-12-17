@@ -8,6 +8,8 @@ import java.util.*;
 
 // @lc code=start
 class Solution {
+
+    // Your runtime beats 12.46 % of java submissions
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> results = new ArrayList<>();
         dfs(n, new ArrayList<>(), results);
