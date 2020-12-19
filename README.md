@@ -247,6 +247,12 @@
     * 并不需要分层遍历：因为每个node的neighbor加入queue的时候，都会visited，且 `neighbor.dist = node.dist+1`
         * ~~由于要 分层遍历，从而记录start BFS 到该点的min dist。所以比最简单的 BFS 多了一个loop，循环 q.poll, 即拿出这一层的所有点。~~
     * 还在implement的时候改了好几次 `buildG()`. 实际上应该写之前就定好这个method干什么：input/output。
+    * BFS 找 single point shortest distance to every node. DFS 则是找 ALL solutions (根据条件找到valid solution)
+    * 还有个重点：有时候要正反思维。其实也很好想，因为dist应该记录离 目标（end) 的距离更近，所以每个node记录到end的距离。所以BFS要从end到start。这样每个点的dist则是到end的距离。
+        * 1st do: BFS(`end => start`). To find shortest dist from start to every nodes.
+            * so start has the min dist(start,end). and end.dist = 0
+        * 2nd do: DFS(`start => end`). To get ALL paths.
+            * using neig.dist = node.dist - 1 (get closer to end)
 
 
 ## 8 Data Structure - Stack, Queue, Hash, Heap
