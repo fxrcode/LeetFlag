@@ -232,6 +232,8 @@
 * [x] 121 Word Ladder II
     * 很喜爱这道题目，感觉学到了做事情的哲学：
         * 立下目标之后，要做的是一步步向达成目标的自己靠近，而不是离上一刻的自己更远！
+        * 如果 dfs 的时候，只是离上一刻的自己更远，有可能会走入死胡同，同时也离目标更远。要从新回到走入死胡同的入口，去向下一个地方走（而如果还是离自己更远的地方去，可能又走入第 n+1 个死胡同，同样要退回到死胡同的入口）。
+        * 人生跟面试，跟算法一样，如果LTE的话：生命无take two。浪费时间 => 就等于失败了。因为人/面试挂了。
     * 学习了recursion时，java call-by-value的意义和作用
         * 只是机械的知道dfs recursion 之前、之后要 collection.add vs collection.pop.
         * 实际上我在 return 之前，做 `Collections.reverse(path)`, 也同样会影响到path。如果不再reverse回来的话，在dfs return之后，回到stack的上一级时，path整个就是反的！
