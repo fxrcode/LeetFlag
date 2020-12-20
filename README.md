@@ -221,9 +221,31 @@
 * [x] 829 Word Pattern II
     * 因为要求说bijection, 即一个pattern的char，一一对应一个substring。
     * 建立1个map，和一个used set。
-        * 当map中有key=pattern_char，则check pattern对应的
+        * map 负责建立 pattern -> substring 的 dict。
+        * used set 记录这个 路径下来的 word 会否 break bijection。
+    * loop找candidate，如果used，则应该continue，而不是直接return false！
+    * 学习coding skill
+        * loop 得到 str的有效prefix。
+        * 用substring(startIdx).startWith(p2s), 而不是 substring(start,end).startWith(p2s). 因为前者有可能stringBoundaryException。
+    * 比较了传substring和传s_idx的total runtime. 前者明显慢了太多，因为每次都是new string。
 * [] 132 Word Search II
-* [] 121 Word Ladder II
+* [x] 121 Word Ladder II
+    * 很喜爱这道题目，感觉学到了做事情的哲学：
+        * 立下目标之后，要做的是一步步向达成目标的自己靠近，而不是离上一刻的自己更远！
+    * 学习了recursion时，java call-by-value的意义和作用
+        * 只是机械的知道dfs recursion 之前、之后要 collection.add vs collection.pop.
+        * 实际上我在 return 之前，做 `Collections.reverse(path)`, 也同样会影响到path。如果不再reverse回来的话，在dfs return之后，回到stack的上一级时，path整个就是反的！
+            * 之所以用例子 hit,cog跑的时候，只有第二个结果的最后一个值不对，是因为正巧一直回退到hot。
+        * 所以这里reverse应该写 stateless 的一个static function。
+    * Java int collection (list, set) ，只能用最老土的一个个加。因为 `Arrays.asList()` 返回的是AbstractList！是backed by the origin array. 是fixed size! 但是跟 `Set.of()` 之类的还有些不同。前者可以 not be structurally modified (不能加减，但能改变element)。而后者则是immutable。
+    * 所以刘老师所说的 proficient in 1 language的原因就在这里，要深入到语言的实现，和熟练运用**所有**API/Lib.
+    * 再说回这道题目。既然说shortest path，又是simple graph (edge =1), 所以可以用退化版的 **Dijkstra algs** 做即可：即BFS，找到dist(u).
+        * 参见《Algorithms DPV》的BFS。
+        * 由于它是无向图，所以跟binary tree（无环有向图）的BFS多了 visited set/map, 避免倒车！
+    * 并不需要分层遍历：因为每个node的neighbor加入queue的时候，都会visited，且 `neighbor.dist = node.dist+1`
+        * ~~由于要 分层遍历，从而记录start BFS 到该点的min dist。所以比最简单的 BFS 多了一个loop，循环 q.poll, 即拿出这一层的所有点。~~
+    * 还在implement的时候改了好几次 `buildG()`. 实际上应该写之前就定好这个method干什么：input/output。
+
 
 ## 8 Data Structure - Stack, Queue, Hash, Heap
 * [] 657 Insert Delete GetRandom O(1)
