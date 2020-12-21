@@ -258,6 +258,10 @@
         * 怎么学算法：每个算法的目的，input、output，然后是复杂度。
         * 看《Algorithms DPV》里BFS就是 `input: G(E,V), output: distMap, distMap[u] = min_dist_from[s]`.
             * 而如果有distance map的时候，就不需要多个loop去做level traversal了。
+    * BFS, DFS写method的时候就要写出来method comment：搞清楚目的，input, output.
+        * 例如DFS，里面 path 是在recursion call之前 add(node), 之后remove。所以当 dfs(end) 的时候，path已经有end了。可以add 到results了。所以退出recursion的条件就是 `cur.equals(end)`
+            * 搞清楚这个，也才能bug-free的写出来 dfs之前，要把 path初始化为 `[start]`.
+            * 注意这里 string比较值的话，必须用 `a.equals(end)`. 如果用 == 就错了， 因为 cur 从 neighs里拿。而这个是我用 helper function 的动态生成的 `set<String>`. 是新的String object。
 
 
 ## 8 Data Structure - Stack, Queue, Hash, Heap
