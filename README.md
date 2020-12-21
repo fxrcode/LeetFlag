@@ -253,6 +253,11 @@
             * so start has the min dist(start,end). and end.dist = 0
         * 2nd do: DFS(`start => end`). To get ALL paths.
             * using neig.dist = node.dist - 1 (get closer to end)
+    * 在 lint、leet上面写的时候，完全没有autocomplete。所以必须对API熟悉；也不会红线表示syntax error，除非hit run。所以naming + subproblem很重要，多一个debug，就少了XXX分钟！
+    * 老师的解法：这道题是implicit graph，所以完全没有必要建立Graph！
+        * 怎么学算法：每个算法的目的，input、output，然后是复杂度。
+        * 看《Algorithms DPV》里BFS就是 `input: G(E,V), output: distMap, distMap[u] = min_dist_from[s]`.
+            * 而如果有distance map的时候，就不需要多个loop去做level traversal了。
 
 
 ## 8 Data Structure - Stack, Queue, Hash, Heap

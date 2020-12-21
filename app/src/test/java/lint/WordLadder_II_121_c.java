@@ -96,26 +96,23 @@ public class WordLadder_II_121_c {
         return visited;
     }
 
+    /**
+     * l * 26 * l = O(26*l^2)
+     * @param ns
+     * @param dict
+     * @return
+     */
     private Set<String> findNeigbhorsStrings(String ns, Set<String> dict) {
         Set<String> ret = new HashSet<>();
         for (int i = 0; i < ns.length(); i++) {
             for (char ch : ALPHA.toCharArray()) {
-                String candidate = genNewString(ns, i, ch);
-                if (!dict.contains(candidate)) {
-                    continue;
+                String candidate = ns.substring(0, i) + ch + ns.substring(i+1);
+                if (!dict.contains(candidate) && candidate != ns) {
+                    ret.add(candidate);
                 }
-                ret.add(candidate);
             }
         }
         return ret;
-    }
-
-    private static String genNewString(String me, int i, char ch) {
-        if (me.charAt(i) == ch) {
-            return "";
-        }
-        String other = me.substring(0, i) + ch + me.substring(i + 1);
-        return other;
     }
 
     protected class Node {
