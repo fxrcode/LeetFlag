@@ -283,7 +283,9 @@
 * [] 642 Moving Average from Data Stream
 * [] 494 Implement Stack by Two Queues
 * [] 209 First Unique Character in a String
-* [] 657 Insert Delete GetRandom O(1)
+* [x] 657 Insert Delete GetRandom O(1)
+    * 为了 O(1) for remove. 我先swap last和val，然后再update map和remove val。
+    * 又学习了 `Collections.swap(collection, idx1, idx2)`.
 * [] 612 K Closest Points
 * [] 544 Top k Largest Numbers
 * [] 104 Merge K Sorted Lists
