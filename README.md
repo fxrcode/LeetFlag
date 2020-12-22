@@ -282,7 +282,8 @@
 * [] 401 Kth Smallest Number in Sorted Matrix
 * [] 642 Moving Average from Data Stream
 * [] 494 Implement Stack by Two Queues
-* [] 209 First Unique Character in a String
+* [x] 209 First Unique Character in a String
+    * 因为不能用额外空间，map，或者26位数组/bitset. 那只能用最笨的方法：每一个字母都在整个string里搜一遍。
 * [x] 657 Insert Delete GetRandom O(1)
     * 为了 O(1) for remove. 我先swap last和val，然后再update map和remove val。
     * 又学习了 `Collections.swap(collection, idx1, idx2)`.
