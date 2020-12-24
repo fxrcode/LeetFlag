@@ -295,7 +295,9 @@
 * [] 134 LRU Cache
 
 ## 9 Data Structure - Interval, Array, Matrix & Binary Indexed Tree
-* [] 6 Merge Two Sorted Arrays
+* [x] 6 Merge Two Sorted Arrays
+    * 虽然是简单题，但是这种while，List<Integer>转int[], 以及print int[]. 这些coding细节还是要刻入到muscle memory。
+    * 像《Certified Kubernetes Application Developer (CKAD) Study Guide》所说："The exam is very time constrained on purpose. It’s designed to put you under pressure to ensure that your knowledge of Kubernetes has been deeply ingrained into muscle memory."
 * [] 486 Merge K Sorted Arrays
 * [] 548 Intersection of Two Arrays II
 * [] 793 Intersection of Arrays
