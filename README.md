@@ -298,6 +298,9 @@
 * [x] 6 Merge Two Sorted Arrays
     * 虽然是简单题，但是这种while，List<Integer>转int[], 以及print int[]. 这些coding细节还是要刻入到muscle memory。
     * 像《Certified Kubernetes Application Developer (CKAD) Study Guide》所说："The exam is very time constrained on purpose. It’s designed to put you under pressure to ensure that your knowledge of Kubernetes has been deeply ingrained into muscle memory."
+* [x] 165 Merge Two Sorted Lists
+    * 虽然是简单题，但是我惯性地跟Arrays一样做。所以while 2个都不null之后，我还继续while。所以只beat 1.2%!. 看了leaderboard才发现是只要把dummy.next = 不空的那个node即可。因为list是连着的啊。
+    * 很久不做list。都不记得什么时候要用dummy node了。只有不确定边界的output才要用。input既然给了。就不需要dummy node了。
 * [] 486 Merge K Sorted Arrays
 * [] 548 Intersection of Two Arrays II
 * [] 793 Intersection of Arrays
