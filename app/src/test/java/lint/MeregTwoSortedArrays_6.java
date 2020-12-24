@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.junit.Test;
 
-public class MeregTwoSortedArrays {
+public class MeregTwoSortedArrays_6 {
     @Test
     public void test() {
         int[] A = {1,2,3,4};
