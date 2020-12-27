@@ -303,6 +303,11 @@
     * 很久不做list。都不记得什么时候要用dummy node了。只有不确定边界的output才要用。input既然给了。就不需要dummy node了。
 * [] 548 Intersection of Two Arrays II
 * [] 793 Intersection of Arrays
+* [] 295 Intersections
+    * 发现简单题才是最重要的，因为体现了medium、hard题的基本思想。如果没有掌握所有easy的体型，则可能当场挂掉了。因为还是有需要画图分析讨论的一些结论。
+    * 判断2个区间是否相交，可以看做 `反(不想交)`。这个容易理解。
+    * 例如本题的特点：排好序的区间序列，且序列内每个区间**两两互不相交**。
+    
 * [] 149 Best Time to Buy and Sell Stock
 * [] 405 Submatrix Sum
 * [] 943 Range Sum Query - Immutable
