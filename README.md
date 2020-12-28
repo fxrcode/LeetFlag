@@ -312,7 +312,10 @@
     * 解法3：对input排序，然后排序数组里搜索，当然是用二分法。
         * 时间 O(nlogn + mlogm + mlogn), 前2个是sort的时间，mlogn则是做m次 二分搜索。
 * [] 548 Intersection of Two Arrays II
-* [] 793 Intersection of Arrays
+* [x] 793 Intersection of Arrays
+    * 解法1：直接把所有arrays合并到1个大list，先sort，然后再类似run-length-encoding去找到每个数的occurrence，同时跟size比较。因为题目说了no duplicate in each array。
+        * 注意处理 [1,1,1] 的边界情况。
+        * 还有用count == 0 来判断是 all[0] element。因为lastNum不太好初始化，例如我设为0，结果array里也有0。于是错在78%的testcase。
 * [x] 295 Intersections
     * 发现简单题才是最重要的，因为体现了medium、hard题的基本思想。如果没有掌握所有easy的体型，则可能当场挂掉了。因为还是有需要画图分析讨论的一些结论。
     * 判断2个区间是否相交，可以看做 `反(不想交)`。这个容易理解。
