@@ -44,7 +44,7 @@ public class IntersectionOfArrays_793_c {
         System.out.println( intersectionOfArrays(BIGG) );
     }
     /**
-     * Your submission beats 54.20% Submissions!
+     * Your submission beats 6.60% Submissions!
      * Using k size priority queue to mimic the sort.
      * say input is k arrays, each has N elements
      * TimeComplexity: O(kNLogN + nkLogk)
@@ -78,6 +78,7 @@ public class IntersectionOfArrays_793_c {
             if (arrs[p.r][p.c] != lastNum || count == 0) {
                 if (count == k) {
                     intersection++;
+                    // count = 1;   I always got it wrong.
                 }
                 lastNum = arrs[p.r][p.c];
                 count = 1;
