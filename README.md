@@ -316,6 +316,12 @@
     * 解法1：直接把所有arrays合并到1个大list，先sort，然后再类似run-length-encoding去找到每个数的occurrence，同时跟size比较。因为题目说了no duplicate in each array。
         * 注意处理 [1,1,1] 的边界情况。
         * 还有用count == 0 来判断是 all[0] element。因为lastNum不太好初始化，例如我设为0，结果array里也有0。于是错在78%的testcase。
+        * 时间 O(NlogN)
+    * 解法2：用map统计。
+        * 时间 O(N)。
+    * 解法3：还是用heap。不过这里又掌握了Pair class作为每个array的pointer来顺序遍历。
+        * 注意这里有多个变量，所以要搞清楚pq poll之后，什么时候，更新哪些var。这些coding 细节只有多写才能熟练。
+        * 否则面试没法 bug-free
 * [x] 295 Intersections
     * 发现简单题才是最重要的，因为体现了medium、hard题的基本思想。如果没有掌握所有easy的体型，则可能当场挂掉了。因为还是有需要画图分析讨论的一些结论。
     * 判断2个区间是否相交，可以看做 `反(不想交)`。这个容易理解。
