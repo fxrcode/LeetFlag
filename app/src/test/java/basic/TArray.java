@@ -1,6 +1,7 @@
 package basic;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -19,4 +20,19 @@ public class TArray {
         int[] B = A.stream().mapToInt(i -> i).toArray();
         System.out.println( Arrays.toString(B));
     }
+
+    @Test
+    public void convertIntArrayToList() {
+        int[] nums = {1,2,3,4 ,5};
+        List<Integer> l = Arrays.stream(nums).boxed().collect(Collectors.toList());
+        System.out.println(l);
+    }
+
+    @Test
+    public void convertIntArrayToSet() {
+        int[] nums = {1,2,2,3,4};
+        Set<Integer> s = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+        System.out.println(s);
+    }
+
 }

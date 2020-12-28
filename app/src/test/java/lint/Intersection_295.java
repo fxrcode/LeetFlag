@@ -24,7 +24,7 @@ public class Intersection_295 {
     /**
      * Thanks wjsugar's notes
      * Your submission beats 47.46% Submissions!
-     * 2 pointers + greedy (need to find pattern, then prove it)
+     * Using merge 2 sorted arrays' template, the hard part is how to compare interval vs compare int.
      * O(N+M)
      * @param a: first sequence
      * @param b: second sequence

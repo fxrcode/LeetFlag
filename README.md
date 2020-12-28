@@ -295,19 +295,29 @@
 * [] 134 LRU Cache
 
 ## 9 Data Structure - Interval, Array, Matrix & Binary Indexed Tree
-* [x] 6 Merge Two Sorted Arrays
+* [x] 6 **Merge Two Sorted Arrays**
+    * 模板题
     * 虽然是简单题，但是这种while，List<Integer>转int[], 以及print int[]. 这些coding细节还是要刻入到muscle memory。
     * 像《Certified Kubernetes Application Developer (CKAD) Study Guide》所说："The exam is very time constrained on purpose. It’s designed to put you under pressure to ensure that your knowledge of Kubernetes has been deeply ingrained into muscle memory."
-* [x] 165 Merge Two Sorted Lists
+* [x] 165 **Merge Two Sorted Lists**
+    * 模板题： 2 pointers
     * 虽然是简单题，但是我惯性地跟Arrays一样做。所以while 2个都不null之后，我还继续while。所以只beat 1.2%!. 看了leaderboard才发现是只要把dummy.next = 不空的那个node即可。因为list是连着的啊。
     * 很久不做list。都不记得什么时候要用dummy node了。只有不确定边界的output才要用。input既然给了。就不需要dummy node了。
+* [x] 547 Intersection of Two Arrays
+    * 多种解法
+    * 解法1：把2个arrays放入2个set，返回intersect。时间 O(n+m)，空间 O(n+m)
+    * 解法2：用 Merge two sorted arrays 的 模板。现在是 merge的条件是2个元素相同。
+        * 对于duplicate，需要避免，所以用permutation模板的方法。
+        * 时间 O(nlogn + mlogm + n + m). 前2个是sort的时间，m+n是模板的扫描时间。空间则是O(1)。因为input、output的空间在external。
+    * 解法3：对input排序，然后排序数组里搜索，当然是用二分法。
+        * 时间 O(nlogn + mlogm + mlogn), 前2个是sort的时间，mlogn则是做m次 二分搜索。
 * [] 548 Intersection of Two Arrays II
 * [] 793 Intersection of Arrays
-* [] 295 Intersections
+* [x] 295 Intersections
     * 发现简单题才是最重要的，因为体现了medium、hard题的基本思想。如果没有掌握所有easy的体型，则可能当场挂掉了。因为还是有需要画图分析讨论的一些结论。
     * 判断2个区间是否相交，可以看做 `反(不想交)`。这个容易理解。
     * 例如本题的特点：排好序的区间序列，且序列内每个区间**两两互不相交**。
-    
+
 * [] 149 Best Time to Buy and Sell Stock
 * [] 405 Submatrix Sum
 * [] 943 Range Sum Query - Immutable
