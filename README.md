@@ -311,7 +311,9 @@
         * 时间 O(nlogn + mlogm + n + m). 前2个是sort的时间，m+n是模板的扫描时间。空间则是O(1)。因为input、output的空间在external。
     * 解法3：对input排序，然后排序数组里搜索，当然是用二分法。
         * 时间 O(nlogn + mlogm + mlogn), 前2个是sort的时间，mlogn则是做m次 二分搜索。
-* [] 548 Intersection of Two Arrays II
+* [x] 548 Intersection of Two Arrays II
+    * 解法1：还是用 merge 2 sorted arrays的模板。而且比I的更简单些，不用比较duplicate。
+    * 解法2：用HashMap。
 * [x] 793 Intersection of Arrays
     * 解法1：直接把所有arrays合并到1个大list，先sort，然后再类似run-length-encoding去找到每个数的occurrence，同时跟size比较。因为题目说了no duplicate in each array。
         * 注意处理 [1,1,1] 的边界情况。
