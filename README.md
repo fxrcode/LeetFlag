@@ -343,12 +343,14 @@
 * [] 944 Maximum Submatrix
 * [] 931 Median of K Sorted Arrays
 * [x] 840 Range Sum Query - Mutable
+    * 第一次写BIT。挺多细节，不要搞错 A vs BIT 的index。
 * [] 654 Sparse Matrix Multiplication
 * [] 577 Merge K Sorted Interval Lists
 * [] 486 Merge K Sorted Arrays
     * 用 heap (PriorityQueue) 也挺有讲究，program to interface。所以是 `Queue<Node> pq = PriorityQueue<>();`. 因为这样符合OOP的8大原则。如果pq后面换成其他implementation，下面用到pq的地方就不用改，并regression test了。特别是OOP的目标是为了方便多人协作完成项目，open to extension, closed for modification. 即好的OOD是 robust 的 interface。
         * 当然也要适可而止，总不能走极端的 `Object pq` 吧。
         * 但是**TLE**了，fail在92%。
+    * 按照 Intersection of Arrays 的九章解法：用Pair就不用存value了。
 
 * [] 65 Median of two Sorted Arrays
 
