@@ -342,7 +342,7 @@
 * [] 41 Maximum Subarray
 * [] 944 Maximum Submatrix
 * [] 931 Median of K Sorted Arrays
-* [] 840 Range Sum Query - Mutable
+* [x] 840 Range Sum Query - Mutable
 * [] 654 Sparse Matrix Multiplication
 * [] 577 Merge K Sorted Interval Lists
 * [] 486 Merge K Sorted Arrays
