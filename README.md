@@ -339,7 +339,10 @@
 * [] 547 Intersection of Two Arrays
 * [] 138 Subarray Sum
 * [] 64 Merge Sorted Array
-* [] 41 Maximum Subarray
+* [x] 41 Maximum Subarray
+    * 一个simple的题目，原来可以有 brute-force，greedy，分治法，DP，以及linear scanning。
+    * 而且linear scanning的思想其实非常常见：maxSoFar & maxEndingHere. 这在DP也用到了。
+    * 是subarray的基础题型。要烂熟。
 * [] 944 Maximum Submatrix
 * [] 931 Median of K Sorted Arrays
 * [x] 840 Range Sum Query - Mutable
