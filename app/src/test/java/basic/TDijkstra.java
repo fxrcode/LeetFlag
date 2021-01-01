@@ -8,7 +8,6 @@ import java.util.*;
 import org.junit.Test;
 
 public class TDijkstra {
-    // Driver code
     @Test
     public void test() {
         int V = 5;
