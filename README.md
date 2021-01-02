@@ -262,7 +262,7 @@
         * 例如DFS，里面 path 是在recursion call之前 add(node), 之后remove。所以当 dfs(end) 的时候，path已经有end了。可以add 到results了。所以退出recursion的条件就是 `cur.equals(end)`
             * 搞清楚这个，也才能bug-free的写出来 dfs之前，要把 path初始化为 `[start]`.
             * 注意这里 string比较值的话，必须用 `a.equals(end)`. 如果用 == 就错了， 因为 cur 从 neighs里拿。而这个是我用 helper function 的动态生成的 `set<String>`. 是新的String object。
-
+    * 今天看了Dijkstra algorithm的Algs4和JeffE。都有 `pred[]`, `pred[v]` 表示到 v 的shortest path的predecessor。而且JeffE也谢了BFS跟DFS都可以加上 `pred[]`. 所以 都可以找到SSSP，并且列出这个path。 但是这word ladder II要求的是 ALL shortest paths。所以只能用DFS 去得到所有paths了。
 
 ## 8 Data Structure - Stack, Queue, Hash, Heap
 * [] 657 Insert Delete GetRandom O(1)
