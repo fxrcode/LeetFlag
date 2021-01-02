@@ -85,7 +85,7 @@ public class TDijkstra {
 
                 // remove the minimum distance node
                 // from the priority queue
-                int u = pq.remove().node;
+                int u = pq.poll().node;
 
                 // adding the node whose distance is
                 // finalized
