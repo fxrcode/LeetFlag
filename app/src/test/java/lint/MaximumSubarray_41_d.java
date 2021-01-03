@@ -18,7 +18,7 @@ public class MaximumSubarray_41_d {
      */
     public int maxSubArray(int[] nums) {
         // write your code here
-        int[] dp = new int[nums.length];
+        int[] dp = new int[nums.length];    // max ending at i
         dp[0] = nums[0];
         int max = dp[0];
 

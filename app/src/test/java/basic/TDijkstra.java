@@ -1,15 +1,119 @@
 package basic;
 
+import java.io.File;
 // Java implementation of Dijkstra's Algorithm
-// using Priority Queue
-// https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
 import java.util.*;
 
 import org.junit.Test;
 
 public class TDijkstra {
+    public static final int INF = 1000000000;
     @Test
-    public void test() {
+    public void test_cp3() throws Exception {
+        // got from cp3 ch4.sssp.dijkstra.java, 1st line txt is V,E,src. other lines is u,v,w.
+        String file = "src/test/resources/" + "dijkstra_cp3_418.txt"; // "dijkstra_cp3_417.txt";
+
+        Scanner sc = new Scanner(new File(file));
+        int V = sc.nextInt(), E = sc.nextInt(), s = sc.nextInt();
+        List<List<IntegerPair>> adj = new ArrayList<>();
+        for(int u = 0; u < V; ++u) {
+            List<IntegerPair> neighbors = new ArrayList<>();
+            adj.add(neighbors);
+        }
+        while (E-- > 0) {
+            int u = sc.nextInt(), v = sc.nextInt(), w = sc.nextInt();
+            adj.get(u).add(new IntegerPair(v,w));
+        }
+
+        System.out.println(adj.get(0));
+
+        // execute dijkstra on the graph
+        Dijkstra_cp3 cp3 = new Dijkstra_cp3(adj, s);
+        cp3.dijkstra();
+    }
+
+
+    /**
+     * Learned the compact Dijkstra variant in CP3
+     * using Priority Queue
+     * https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
+     */
+    class Dijkstra_cp3 {
+        int s;
+        int V;
+        List<List<IntegerPair>> adj;
+        List<Integer> dist;
+
+        public Dijkstra_cp3(List<List<IntegerPair>> adj, int src) {
+            this.adj = adj;
+            this.V = adj.size();
+            this.s = src;
+            this.dist = new ArrayList<>(Collections.nCopies(V, INF)); // dist[u] = shortest path
+        }
+
+        /**
+         *
+         * @param adj: the graph using adjacent list
+         * @param s: source id
+         */
+        public void dijkstra() {
+            PriorityQueue<IntegerPair> pq = new PriorityQueue<>(); // [d,u]
+
+            // init source
+            dist.set(s, 0);
+            pq.offer(new IntegerPair(0, s));
+            while (!pq.isEmpty()) {
+                IntegerPair top = pq.poll();
+                int d = top.fir(), u = top.sec();
+                if (d > dist.get(u)) continue;
+                // process the u
+                for (IntegerPair v_w : adj.get(u)) {
+                    int v = v_w.fir(), w = v_w.sec();
+                    // try relax v
+                    if (dist.get(u) + w < dist.get(v)) {
+                        dist.set(v, dist.get(u) + w);
+                        pq.offer(new IntegerPair(dist.get(v), v));
+                    }
+                }
+            }
+
+            // print
+            for (int u = 0; u < V; ++u) {
+                System.out.printf("SSSP(%d, %d) = %d\n", s, u, dist.get(u));
+            }
+        }
+
+    }
+
+    class IntegerPair implements Comparable<IntegerPair> {
+        private int _first, _second;
+        public IntegerPair(int f, int s) {
+            _first = f;
+            _second = s;
+        }
+
+        int fir() { return _first; }
+        int sec() { return _second; }
+
+		@Override
+		public int compareTo(IntegerPair o) {
+			if (this.fir() != o.fir() ) {
+                return this.fir() - o.fir();
+            } else {
+                return this.sec() - o.sec();
+            }
+        }
+
+		@Override
+		public String toString() {
+			return "IntegerPair [_first=" + _first + ", _second=" + _second + "]";
+		}
+
+
+    }
+
+    @Test
+    public void test_g4g() {
         int V = 5;
         int source = 0;
 
@@ -33,7 +137,7 @@ public class TDijkstra {
         adj.get(2).add(new Node(3, 4));
 
         // Calculate the single source shortest path
-        Dijkstra dpq = new Dijkstra(V);
+        Dijkstra_g4g dpq = new Dijkstra_g4g(V);
         dpq.dijkstra(adj, source);
 
         // Print the shortest path to all the nodes
@@ -47,11 +151,17 @@ public class TDijkstra {
             if (path == null) {
                 continue;
             }
-            System.out.println( "path to " + i + ": " + path );
+            System.out.println("path to " + i + ": " + path);
         }
     }
 
-    class Dijkstra {
+
+    /**
+     * This is modified from Geek4geeks, added pred[] for path
+     * using Priority Queue
+     * https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
+     */
+    class Dijkstra_g4g {
         private int dist[];
         private Set<Integer> settled;
         private PriorityQueue<Node> pq;
@@ -59,7 +169,7 @@ public class TDijkstra {
         private int V; // Number of vertices
         List<List<Node>> adj;
 
-        public Dijkstra(int V) {
+        public Dijkstra_g4g(int V) {
             this.V = V;
             dist = new int[V];
             pred = new int[V];
