@@ -10,6 +10,10 @@
 
 ---
 
+## xxx Segment Tree and Binary Indexed Tree
+* [x] 206 Interval Sum
+    * when it comes 2 range: query range & root range, 搞清楚什么变，什么不变，compare的哪个range的mid.
+
 ## 1 Hack the Algorithm Interview
 * [] 627 Longest Palindrome
 * [] 415 Valid Palindrome
