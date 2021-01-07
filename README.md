@@ -28,6 +28,10 @@
     * 这题是BIT的模板题，注意需要A和BIT 2个array，其中A是input nums的复制，BIT是树状数组，因为后期可能需要update，所以需要underline保存一个nums的复制，来算delta。
     * 注意BIT的size是 `A.length+1`.
     * 注意update和getPrefixSum的时候， `int i = index + 1`. 还有就是lintcode是给了interface。但是面试可能不给，所以要记清楚每个数据结构的API！
+* [x] 532 Reverse Pairs
+    * 这题和248的区别是，后者全放进去之后，做query。前者则是一边query，一边update。注意query找count(greater than rank(A[i])) 即 找 count(maxRank) - count(rank(A[i])).
+    * 需要熟练熟练在熟练。所以要反复思考，重写~
+    * 这里lint和leet不同。leet要求的reverse pair是 `i<j && A[i]>2*A[j]`.
 
 ## 1 Hack the Algorithm Interview
 * [] 627 Longest Palindrome
