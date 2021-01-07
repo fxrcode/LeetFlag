@@ -60,6 +60,7 @@ public class Tio {
                 ans.add(convert(numStr));
             }
         }
+        reader.close();
 
         return ans;
 

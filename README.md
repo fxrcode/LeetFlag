@@ -15,6 +15,19 @@
     * when it comes 2 range: query range & root range, 搞清楚什么变，什么不变，compare的哪个range的mid.
     * Access modifier & inner class: https://stackoverflow.com/a/215505/3984911
     * 对于modify不要忘了recursion 的 edge case要return。
+* [x] 248 Count of Smaller number
+    * ~~我一开始的想法是用模板把A[] build 成segment tree，然后value是用min还是max呢？~~ 解不出来。
+    * 看了课程才知道这里要用类似 binary search for answer的想法。把`0~100000`的数全部用来build segment tree。这样的 segment tree的node的range才有了意义。
+        * 其中，每个node的val即 `count[start...end]`.
+        * 求countOfSmaller即求 `query(0, A[i]-1)`.
+        * 但是！MLE了！看课程说要 `离散化` 来减少tree的node： `离散化，把无限空间中有限的个体映射到有限的空间中去，以此提高算法的时空效率。`. 例如讲数组映射到新数组来缩小range： `[1,999,15,100000,15] -> [1,3,2,4,2]`，并建立map来保存这个映射。然后再build segment，并在query的时候记得拿map找映射即可。
+        * 用了 Segment Tree还是会TLE。
+    * 看leading board，都是用BIT。先做了850，复习了一下BIT 模板，套上去测了几个简单的发现没问题就提交了，才发现有错误！见 `CountOfSmallerNumber_248_e`的test4。原因在于我对于update没有真正理解。模板里的update是update underline A[i]的val。但是我build的时候其实是用 A[i] 作为index的。所以update的时候，应该是update count(A[i]). 所以val应该 +1。即delta = 1！所以加重复的数据时会导致问题。
+    * 刚在Discuss里报了问题，因为我用了6天前 leaderboard里的答案也是TLE在81%。
+* [x] 850 Range Sum Query Mutable
+    * 这题是BIT的模板题，注意需要A和BIT 2个array，其中A是input nums的复制，BIT是树状数组，因为后期可能需要update，所以需要underline保存一个nums的复制，来算delta。
+    * 注意BIT的size是 `A.length+1`.
+    * 注意update和getPrefixSum的时候， `int i = index + 1`. 还有就是lintcode是给了interface。但是面试可能不给，所以要记清楚每个数据结构的API！
 
 ## 1 Hack the Algorithm Interview
 * [] 627 Longest Palindrome
