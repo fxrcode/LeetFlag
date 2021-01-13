@@ -32,19 +32,18 @@ class Solution:
 
         res = ''
         for middle in range(len(s)):
-            sub = self.find_palindrome(s, middle, middle)
-            if len(sub) > len(res):
-                res = sub
-            sub = self.find_palindrome(s, middle, middle+1)
-            if len(sub) > len(res):
-                res = sub
+            start, length = self.center_spread(s, middle, middle)
+            if length > len(res):
+                res = s[start:start+length]
+            start, length = self.center_spread(s, middle, middle+1)
+            if length > len(res):
+                res = s[start:start+length]
         return res
 
     """use interval DP
-    time
-    space
+    time: O(N^2)
+    space: O(N^2)
     """
-
     def longestPalindrome3(self, s):
         if not s:
             return ''
@@ -73,13 +72,18 @@ class Solution:
             j -= 1
         return i >= j
 
-    def find_palindrome(self, s, i, j):
-        while i >= 0 and j < len(s) and s[i] == s[j]:
-            i -= 1
-            j += 1
-        if j - i + 1 >= 0:
-            return s[i+1: j]
-        return ''
+    """
+    learned from https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/
+    return a tuple: start and length
+    """
+    def center_spread(self, s, i, j):
+        while i >= 0 and j < len(s):
+            if s[i] == s[j]:
+                i -= 1
+                j += 1
+            else:
+                break
+        return i+1, j-i+1-2
 
 
 test = Solution()
@@ -89,6 +93,7 @@ print(test.longestPalindrome('aba'))
 
 print(test.longestPalindrome2('abcdzdcab'))
 print(test.longestPalindrome2('abc'))
+print(test.longestPalindrome2('ab'))
 print(test.longestPalindrome2('aba'))
 
 print(test.longestPalindrome3('abcdzdcab'))
