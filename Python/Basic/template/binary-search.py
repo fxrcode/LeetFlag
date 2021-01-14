@@ -3,9 +3,9 @@ class Solution:
     """Binary Search template
     Use case
     ---
-    1. Sorted Array
-    2. find better solution than O(N)
-    3. OOXX pattern
+    * Sorted Array
+    * find better solution than O(N)
+    * OOXX pattern
 
     Complexity
     ---
