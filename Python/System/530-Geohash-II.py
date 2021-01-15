@@ -31,7 +31,10 @@ class GeoHash:
         latitude = (min_lat + max_lat) / 2
         return longitude, latitude
 
+
     def str2bin(self, geohash):
+        """ helper method to convert geohash to binary string
+        """
         bin_result = 0
         for h in geohash:
             bin_result <<= 5

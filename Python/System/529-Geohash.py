@@ -39,7 +39,10 @@ class GeoHash:
         result = self.bin2base(bin_result, precision*5)
         return result
 
+
     def bin2base(self, bin, precision):
+        """helper method to convert int to BASE32 form string
+        """
         result = ""
         bin_str = format(bin, "b")
         for i in range(0, precision, 5):
