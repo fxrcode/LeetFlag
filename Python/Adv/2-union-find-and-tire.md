@@ -67,6 +67,7 @@ def find(self, node):
         return node    
     self.father[node] = self.find(self.father[node])
     return self.father[node]
+
 # 非递归版本
 def find(self, node):
     path = []
