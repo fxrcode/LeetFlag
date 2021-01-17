@@ -25,7 +25,7 @@ class ConnectingGraph:
     def query(self, a, b):
         # write your code here
         # print(self.father)
-        return self.father[self.find(a)] == self.father[self.find(b)]
+        return self.find(a) == self.find(b)
 
     def find(self, n):
         if n == self.father[n]:
