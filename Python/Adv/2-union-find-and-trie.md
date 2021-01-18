@@ -1,4 +1,4 @@
-# Advanced Algorithms \(2\) - Union Find & Tire
+# Advanced Algorithms \(2\) - Union Find & Trie
 
 ## 1. Union Find
 

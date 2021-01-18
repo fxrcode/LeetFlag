@@ -1,5 +1,5 @@
 class UF:
-    def __init__(self, n) -> None:
+    def __init__(self, n):
         self.father = {}
         for i in range(1, n+1):
             self.father[i] = i
