@@ -151,7 +151,7 @@ class ConnectingGraph:
             
         for i in path :
             self.father[i] = node
-        
+
         return node        
 ```
 
