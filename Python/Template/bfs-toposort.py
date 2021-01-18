@@ -1,5 +1,4 @@
-from typing import Collection
-
+from collections import deque
 
 class Solution:
     def bfs(self, start_node):
@@ -19,7 +18,7 @@ class Solution:
         """
         # needs queue for BFS
         # and dist map to mark visited and SSSP
-        q = Collection.deque[[start_node]]
+        q = deque([start_node])
         dist = {start_node: 0}
 
         while q:
@@ -49,7 +48,7 @@ class Solution:
         indegrees = self.calc_indegress(nodes)
 
         # init queue with all nodes with 0 in-degree
-        q = Collection.deque([n for n in nodes if indegrees[n] == 0])
+        q = deque([n for n in nodes if indegrees[n] == 0])
 
         # BFS to process all nodes: decrease indegrees
         topo_order = []
