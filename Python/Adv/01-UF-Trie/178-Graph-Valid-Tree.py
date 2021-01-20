@@ -1,3 +1,5 @@
+from collections import defaultdict, deque
+
 class Solution:
     """
     @param n: An integer
@@ -5,12 +7,10 @@ class Solution:
     @return: true if it's a valid tree, or false
     """
     def validTree(self, n, edges):
-        """[summary]
-        Method 1: UF. Because valid tree has no cycle => E = V-1. And CC === 1, so no separated groups.
+        """Method 1: UF. Because valid tree has no cycle => E = V-1. And CC === 1, so no separated groups.
         Better understand some cases quickly, and no need to check cycle!
+        Your submission beats30.40 %Submissions
         """
-        if not edges:
-            return False
 
         self.cc = 0
         self.father = {}
@@ -44,8 +44,50 @@ class Solution:
             self.father[n] = node
         return node
 
+    def validTree2(self, n, edges):
+        """Using BFS
+        Your submission beats10.20 %Submissions
+        """
+        # build up the graph
+        if n-1 != len(edges):
+            return False
+
+        # neigs = {} # src: set of dst's
+        # https://www.educative.io/edpresso/learning-about-defaultdict-in-python
+        # create a dict of lists: key with no value is assigned with an empty list
+        ## you can also init with int, or set
+        neigs = defaultdict(list)
+        for s,d in edges:
+            neigs[s].append(d)
+            neigs[d].append(s)
+
+        # BFS
+        visited = set()
+        q = deque([0])
+        visited.add(0)
+
+        while q:
+            cur = q.popleft()
+            for neig in neigs[cur]:
+                if neig in visited:
+                    # return False
+                    continue
+                q.append(neig)
+                visited.add(neig)
+
+        return len(visited) == n
+
+
+#####################################################################
+#                                                                   #
+#                             BANNER                                #
+#                                                                   #
+#####################################################################
+
 s = Solution()
 n,edges = 5, [[0, 1], [0, 2], [0, 3], [1, 4]]
 print(s.validTree(n,edges))
+print(s.validTree2(n,edges))
+
 n,edges = 5, [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]
 print(s.validTree(n,edges))
