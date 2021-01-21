@@ -29,3 +29,7 @@ def dummy(i):
         return "hello world", 42
     else:
         return None, None, True
+
+
+words = ["area","lead","wall","lady","ball"]
+prefix = ''.join( w[:2] for w in words )
