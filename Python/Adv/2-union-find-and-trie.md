@@ -566,7 +566,7 @@ class Trie:
         return node is not None and node.is_word
 
     def startsWith(self, prefix):
-        # 同上一个，只要wor不空就行
+        # 同上一个，只要word不空就行
         return self.find(prefix) is not None
 ```
 

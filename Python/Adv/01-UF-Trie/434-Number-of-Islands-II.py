@@ -64,12 +64,18 @@ class Solution:
             return False
         return True
 
-
+"""
 class Point:
     def __init__(self, a=0, b=0):
         self.x = a
         self.y = b
+"""
 
+#####################################################################
+#                                                                   #
+#                             BANNER                                #
+#                                                                   #
+#####################################################################
 s = Solution()
 n, m, A = 3,3, [(0,0), (0,1), (2,2), (2,1)]
 print(s.numIslands2(n,m,A))
