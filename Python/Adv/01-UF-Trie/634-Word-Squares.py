@@ -68,6 +68,11 @@ class Trie:
         return [] if node is None else node.word_list
 
 
+#####################################################################
+#                                                                   #
+#                             BANNER                                #
+#                                                                   #
+#####################################################################
 s = Solution()
 words = ["area","lead","wall","lady","ball"]
 print(s.wordSquares(words))
