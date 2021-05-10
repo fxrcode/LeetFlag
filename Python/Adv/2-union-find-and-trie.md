@@ -495,7 +495,7 @@ class Solution:
         return city
 ```
 
-## 2. Tire
+## 2. Trie
 
 #### 什么是字典树？
 
@@ -507,7 +507,7 @@ class Solution:
 * 比较 Trie 和 Hash 的优劣
   * Trie需要寻址L次，而hash只有一次
 * 字符矩阵类问题使用 Trie 比 Hash 更高效
-  * hash需要找26个字母，但tire只看儿子有几个
+  * hash需要找26个字母，但 Trie 只看儿子有几个
 
 #### 字典树通过用空间换时间，从而减少了时间复杂度，而增加了空间复杂度。
 
@@ -519,7 +519,7 @@ class Solution:
 
 ![](../../.gitbook/assets/screen-shot-2018-10-22-at-12.02.43-pm.png)
 
-#### Tire的实现
+#### Trie 的实现
 
 #### [442. Implement Trie \(Prefix Tree\)](https://www.lintcode.com/problem/implement-trie-prefix-tree/description) / [208. Implement Trie \(Prefix Tree\)](https://leetcode.com/problems/implement-trie-prefix-tree/description/)
 
@@ -576,7 +576,7 @@ class Trie:
 
 * 借助DFS进行遍历
   * 如果不是 . 的话，就对下一层进行搜索
-  * 如果是 . 的话，对改层所有的children的child进行搜索
+  * 如果是 . 的话，对该层所有的children的child进行搜索
 
 ```python
 class TrieNode :

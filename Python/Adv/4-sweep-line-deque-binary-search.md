@@ -323,7 +323,7 @@ class Solution:
 * hash - O\(n\) O\(n\)
 * 二分法 O\(nlogn\) O\(1\)
 
-![](../../.gitbook/assets/screen-shot-2018-10-29-at-1.40.11-pm.png)
+![](../../assets/screen-shot-2018-10-29-at-1.40.11-pm.png)
 
 占坑
 
@@ -351,9 +351,9 @@ class Solution:
 
 ## 4. Laddar
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.00.36-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.00.36-pm.png)
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.00.40-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.00.40-pm.png)
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.00.45-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.00.45-pm.png)
 

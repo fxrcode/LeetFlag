@@ -32,7 +32,7 @@ prefix sum的简单应用
 
 ## Ladder
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.18.43-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.18.43-pm.png)
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.18.50-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.18.50-pm.png)
 

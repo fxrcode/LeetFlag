@@ -137,7 +137,7 @@
 * initialize: f\[i\]\[0\] = 0 f\[0\]\[j\] = 0
 * answer: f\[n\]\[m\]
 
-![](../../.gitbook/assets/screen-shot-2018-11-05-at-11.34.18-am.png)
+![](../../assets/screen-shot-2018-11-05-at-11.34.18-am.png)
 
 #### [119. Edit Distance](https://www.lintcode.com/problem/edit-distance/description)
 
@@ -148,7 +148,7 @@
 * initialization: f\[i\]\[0\] = i, f\[0\]\[j\] = j
 * answer: f\[n\]\[m\]
 
-![](../../.gitbook/assets/screen-shot-2018-11-05-at-11.35.07-am.png)
+![](../../assets/screen-shot-2018-11-05-at-11.35.07-am.png)
 
 #### [118. Distinct Subsequences](https://www.lintcode.com/problem/distinct-subsequences/description)
 
@@ -158,7 +158,7 @@
 * initialize: f\[i\]\[0\] = 1, f\[0\]\[j\] = 0 \(j &gt; 0\)
 * answer: f\[n\]\[m\] \(n = sizeof\(S\), m = sizeof\(T\)\)
 
-![](../../.gitbook/assets/screen-shot-2018-11-05-at-11.36.26-am.png)
+![](../../assets/screen-shot-2018-11-05-at-11.36.26-am.png)
 
 #### [29. Interleaving String](https://www.lintcode.com/problem/interleaving-string/description)
 
@@ -196,7 +196,7 @@
 * Answer: 检查所有的f\[n\]\[j\]
 * 时间复杂度 ： O\(n\*S\) ， 滚动数组优化
 
-![](../../.gitbook/assets/screen-shot-2018-11-06-at-8.21.43-pm%20%281%29.png)
+![](../../assets/screen-shot-2018-11-06-at-8.21.43-pm.png)
 
 #### BackPack 马甲题型 
 
@@ -210,7 +210,7 @@
 * 答案: f\[n\]\[s\]
 * 时间复杂度： O\(n\*s\)
 
-![](../../.gitbook/assets/screen-shot-2018-11-06-at-8.25.51-pm.png)
+![](../../assets/screen-shot-2018-11-06-at-8.25.51-pm.png)
 
 #### [562. Backpack IV](https://www.lintcode.com/problem/backpack-iv/description)
 
@@ -241,7 +241,7 @@
 
 ## Ladder
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.09.42-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.09.42-pm.png)
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-9.09.47-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-9.09.47-pm.png)
 

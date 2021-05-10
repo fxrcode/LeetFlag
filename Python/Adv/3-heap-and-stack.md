@@ -362,7 +362,7 @@ def mono_stack(array) :
 
 ## 3. Ladder
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-8.54.35-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-8.54.35-pm.png)
 
-![](../../.gitbook/assets/screen-shot-2018-12-11-at-8.54.41-pm.png)
+![](../../assets/screen-shot-2018-12-11-at-8.54.41-pm.png)
 
